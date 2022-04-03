@@ -70,6 +70,39 @@ public class conexion {
         {
             JOptionPane.showMessageDialog(null,"Error" + e.toString());
         } 
-    }   
+    } 
+    
+    public void RellenaLaTablaConDatosMySQL(String tabla, JTable visor)
+    {
+        String sql = "Select * from " + tabla;
+        Statement st;
+        conexion con = new conexion();
+        Connection conexion = con.conectar();
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("IdProducto");
+        model.addColumn("Nombre");
+        model.addColumn("Código");
+        model.addColumn("Categoría");
+        model.addColumn("Precio ($)");
+        
+        visor.setModel(model);
+        String [] dato = new String[5];
+        try{
+            st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next())
+            {      
+                dato[0] = rs.getString(1);
+                dato[1] = rs.getString(2);
+                dato[2] = rs.getString(3);
+                dato[3] = rs.getString(4);
+                dato[4] = rs.getString(5);
+                model.addRow(dato);
+            }
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
     

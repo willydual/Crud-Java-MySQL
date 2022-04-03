@@ -19,6 +19,8 @@ public class home extends javax.swing.JFrame {
     public home() {
         initComponents();
         this.setLocationRelativeTo(this);
+        conexion con = new conexion();
+        con.RellenaLaTablaConDatosMySQL("productos", jtable_inicio);
     }
 
     /**
