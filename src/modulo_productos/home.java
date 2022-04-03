@@ -19,8 +19,6 @@ public class home extends javax.swing.JFrame {
     public home() {
         initComponents();
         this.setLocationRelativeTo(this);
-        conexion con = new conexion();
-        con.RellenaLaTablaConDatosDeMysql("productos", jtable_inicio);
     }
 
     /**
@@ -198,9 +196,6 @@ public class home extends javax.swing.JFrame {
 
     private void guardar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardar_productoActionPerformed
         // TODO add your handling code here:
-        conexion con = new conexion();
-        con.EjecutaElStoredProcedureInsertaProducto(jnombre, jcodigo, jcategoria, jprecio);
-        con.RellenaLaTablaConDatosDeMysql("productos", jtable_inicio);
     }//GEN-LAST:event_guardar_productoActionPerformed
 
     /**
