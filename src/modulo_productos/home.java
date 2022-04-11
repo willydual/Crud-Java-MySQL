@@ -121,10 +121,12 @@ public class home extends javax.swing.JFrame {
         eliminar_producto.setBackground(new java.awt.Color(0, 227, 24));
         eliminar_producto.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         eliminar_producto.setForeground(new java.awt.Color(255, 255, 255));
+        eliminar_producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
         eliminar_producto.setText("Eliminar");
         eliminar_producto.setBorder(null);
         eliminar_producto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         eliminar_producto.setFocusPainted(false);
+        eliminar_producto.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         eliminar_producto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminar_productoActionPerformed(evt);
@@ -138,10 +140,12 @@ public class home extends javax.swing.JFrame {
         guardar_producto1.setBackground(new java.awt.Color(0, 227, 24));
         guardar_producto1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         guardar_producto1.setForeground(new java.awt.Color(255, 255, 255));
+        guardar_producto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/floppy-disk.png"))); // NOI18N
         guardar_producto1.setText("Guardar");
         guardar_producto1.setBorder(null);
         guardar_producto1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         guardar_producto1.setFocusPainted(false);
+        guardar_producto1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         guardar_producto1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardar_producto1ActionPerformed(evt);
@@ -185,8 +189,8 @@ public class home extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(28, 28, 28)
-                    .addComponent(guardar_producto1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(757, Short.MAX_VALUE)))
+                    .addComponent(guardar_producto1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(760, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
