@@ -104,5 +104,21 @@ public class conexion {
             e.printStackTrace();
         }
     }
+    
+    public void InsertarRegistroConProcedimientoAlmacenado(JTextField nombre, JTextField codigo, JTextField categoria, JTextField precio)
+    {
+        try{
+            Connection conecta = conectar();
+            CallableStatement proc = conecta.prepareCall(" CALL SP_INSERTAPRODUCTO(?,?,?,?)");
+            proc.setString(1, nombre.getText());
+            proc.setString(2, codigo.getText());
+            proc.setString(3, categoria.getText());
+            proc.setString(4, precio.getText());
+            proc.execute();
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
 }
     

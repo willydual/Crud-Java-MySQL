@@ -198,6 +198,9 @@ public class home extends javax.swing.JFrame {
 
     private void guardar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardar_productoActionPerformed
         // TODO add your handling code here:
+        conexion con = new conexion();
+        con.InsertarRegistroConProcedimientoAlmacenado(jnombre, jcodigo, jcategoria, jprecio);
+        con.RellenaLaTablaConDatosMySQL("productos", jtable_inicio);
     }//GEN-LAST:event_guardar_productoActionPerformed
 
     /**
