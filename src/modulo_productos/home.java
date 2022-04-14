@@ -223,6 +223,10 @@ public class home extends javax.swing.JFrame {
 
     private void eliminar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_productoActionPerformed
         // TODO add your handling code here:
+        String id = jtable_inicio.getValueAt(jtable_inicio.getSelectedRow(), 0).toString();
+        conexion con = new conexion();
+        con.EliminaRegistro(id);
+        con.RellenaLaTablaConDatosMySQL("productos", jtable_inicio);
     }//GEN-LAST:event_eliminar_productoActionPerformed
 
     private void guardar_producto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardar_producto1ActionPerformed

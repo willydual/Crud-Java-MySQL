@@ -119,7 +119,6 @@
                               <Component id="jprecio" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="87" pref="87" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" min="-2" pref="283" max="-2" attributes="0"/>
                   </Group>

@@ -120,5 +120,21 @@ public class conexion {
             System.out.println(e);
         }
     }
+    
+    public void EliminaRegistro(String id)
+    {
+        String sql = "delete from productos where idProducto = " + id;
+        Statement st;
+        Connection conexion = conectar();
+        try
+        {
+            st = conexion.createStatement();
+            int rs = st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
+        }catch(SQLException e)
+        {
+            System.out.println(e);
+        }
+    }
 }
     
