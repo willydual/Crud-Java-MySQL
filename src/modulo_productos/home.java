@@ -6,6 +6,10 @@
 package modulo_productos;
 
 import comandosSQL.conexion;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTable;
 
 /**
  *
@@ -21,6 +25,22 @@ public class home extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         conexion con = new conexion();
         con.RellenaLaTablaConDatosMySQL("productos", jtable_inicio);
+        jtable_inicio.addMouseListener(new MouseAdapter(){
+            public void mousePressed(MouseEvent Mouse_evt)
+                {
+                    JTable table = (JTable) Mouse_evt.getSource();
+                    Point point = Mouse_evt.getPoint();
+                    int row = table.rowAtPoint(point);
+                    if(Mouse_evt.getClickCount() == 1)
+               
+                {
+                    jnombre.setText(jtable_inicio.getValueAt(jtable_inicio.getSelectedRow(), 1).toString());
+                    jcodigo.setText(jtable_inicio.getValueAt(jtable_inicio.getSelectedRow(), 2).toString());
+                    jcategoria.setText(jtable_inicio.getValueAt(jtable_inicio.getSelectedRow(), 3).toString());
+                    jprecio.setText(jtable_inicio.getValueAt(jtable_inicio.getSelectedRow(), 4).toString());
+                }
+                }
+        });
     }
 
     /**
