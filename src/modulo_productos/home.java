@@ -63,6 +63,7 @@ public class home extends javax.swing.JFrame {
         eliminar_producto = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         guardar_producto1 = new javax.swing.JButton();
+        actualizar_producto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,6 +153,21 @@ public class home extends javax.swing.JFrame {
             }
         });
 
+        actualizar_producto.setBackground(new java.awt.Color(0, 227, 24));
+        actualizar_producto.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        actualizar_producto.setForeground(new java.awt.Color(255, 255, 255));
+        actualizar_producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/actualizar.png"))); // NOI18N
+        actualizar_producto.setText("Actualizar");
+        actualizar_producto.setBorder(null);
+        actualizar_producto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        actualizar_producto.setFocusPainted(false);
+        actualizar_producto.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        actualizar_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizar_productoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -185,6 +201,8 @@ public class home extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(186, 186, 186)
                 .addComponent(eliminar_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(actualizar_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -217,7 +235,9 @@ public class home extends javax.swing.JFrame {
                             .addComponent(jLabel4)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(eliminar_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eliminar_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actualizar_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -261,6 +281,14 @@ public class home extends javax.swing.JFrame {
         con.RellenaLaTablaConDatosDeMysql("productos", jtable_inicio);
     }//GEN-LAST:event_guardar_producto1ActionPerformed
 
+    private void actualizar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizar_productoActionPerformed
+        // TODO add your handling code here:
+        String id = jtable_inicio.getValueAt(jtable_inicio.getSelectedRow(), 0).toString();
+        conexion con = new conexion();
+        con.ActualizarProducto(jnombre, jcodigo, jcategoria, jprecio, id);
+        con.RellenaLaTablaConDatosDeMysql("productos", jtable_inicio);
+    }//GEN-LAST:event_actualizar_productoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -297,6 +325,7 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar_producto;
     private javax.swing.JButton eliminar_producto;
     private javax.swing.JButton guardar_producto1;
     private javax.swing.JLabel jLabel1;

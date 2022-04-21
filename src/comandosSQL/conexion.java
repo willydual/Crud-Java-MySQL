@@ -138,5 +138,21 @@ public class conexion {
            System.out.println(e);
        }
    }
+   
+   public void ActualizarProducto(JTextField nombre, JTextField codigo, JTextField categoria, JTextField precio, String id)
+   {
+       String sql = "update productos set nombre = '" + nombre.getText() + "',codigo = '" + codigo.getText() + "',categoria = '" + categoria.getText() + "',precio = '" + precio.getText()+ "' where idProducto = " + id;
+       System.out.println(sql);
+       Statement st;
+       Connection conexion = conectar();
+       try{
+           st = conexion.createStatement();
+           int rs = st.executeUpdate(sql);
+           JOptionPane.showMessageDialog(null, "Se ha actualizado correctamente");
+       }catch(SQLException e)
+       {
+           System.out.println(e);
+       }
+   }
 }
     
